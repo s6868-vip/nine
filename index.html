@@ -1,18 +1,8 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head>  
-
-     <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "xy470u9dy6");
-</script>  
-
-
+<head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>国际认证 大额无忧</title>
     <style>
         :root {
@@ -20,6 +10,9 @@
             --neon-pink: #FF007A;
             --neon-green: #00FF75;
             --neon-yellow: #FFDD00;
+            --gold-light: #FFF1B8;
+            --gold-main: #FFD700;
+            --gold-dark: #FFA000;
             --bg-color: #0b0e14;
             --card-bg: #131926;
         }
@@ -42,7 +35,7 @@
             background-attachment: fixed;
             color: #E2E8F0;
             min-height: 100vh;
-            padding: 20px 15px 40px;
+            padding: 15px 12px 30px;
             display: flex;
             justify-content: center;
         }
@@ -53,111 +46,145 @@
             margin: 0 auto;
         }
 
-        /* 统一的高亮科技感卡片容器 */
         .neon-card {
             position: relative;
             background: var(--card-bg);
             border: 1px solid rgba(255, 255, 255, 0.12);
             border-radius: 20px;
-            padding: 20px;
-            margin-bottom: 20px;
+            padding: 15px;
+            margin-bottom: 15px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.6);
         }
 
-        /* 顶部分类标签基础结构 */
+        /* 标语区 */
         .hero-banner {
             display: flex;
             flex-direction: column;
-            gap: 14px;
+            gap: 10px;
+            padding: 8px;
         }
 
         .hero-item {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: flex-start;
-            font-size: 15px;
-            font-weight: 600;
+            justify-content: center;
+            gap: 10px;
+            background: linear-gradient(180deg, rgba(30, 10, 15, 0.6) 0%, rgba(15, 20, 30, 0.8) 100%);
+            border: 1px solid rgba(255, 0, 60, 0.25);
+            border-radius: 14px;
+            padding: 12px 10px;
+            box-shadow: inset 0 0 15px rgba(255, 0, 60, 0.05);
+            text-align: center;
         }
 
+        /* 顶部主徽章标签 */
         .hero-badge {
-            font-size: 13px;
+            font-size: 15px;
             font-weight: 900;
-            padding: 5px 12px;
-            border-radius: 8px;
-            margin-right: 12px;
+            padding: 5px 16px;
+            border-radius: 20px;
             white-space: nowrap;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
+            background: linear-gradient(135deg, #8B0000 0%, #D32F2F 50%, #8B0000 100%);
+            color: #FFFFFF;
+            border: 1px solid #FF5252;
+            box-shadow: 0 0 10px rgba(255, 0, 60, 0.4), inset 0 0 6px rgba(255, 255, 255, 0.3);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
         }
 
-        /* 荧光单色标签群 */
-        .badge-cyan {
-            background: rgba(0, 242, 254, 0.12);
-            color: var(--neon-cyan);
-            border: 1px solid var(--neon-cyan);
-            box-shadow: 0 0 8px rgba(0, 242, 254, 0.2);
-        }
-
-        .badge-pink {
-            background: rgba(255, 0, 122, 0.12);
-            color: var(--neon-pink);
-            border: 1px solid var(--neon-pink);
-            box-shadow: 0 0 8px rgba(255, 0, 122, 0.2);
-        }
-
-        .badge-green {
-            background: rgba(0, 255, 117, 0.12);
-            color: var(--neon-green);
-            border: 1px solid var(--neon-green);
-            box-shadow: 0 0 8px rgba(0, 255, 117, 0.2);
-        }
-
-        .typing-container {
-            display: inline-flex;
+        /* 底部 4 个标签包裹容器 */
+        .badge-footer-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             align-items: center;
-            color: #F7FAFC;
+            gap: 6px;
+            margin-top: 4px;
+            width: 100%;
         }
 
-        .cursor {
-            display: inline-block;
-            width: 2px;
-            height: 1.2em;
-            background-color: var(--neon-cyan);
-            vertical-align: middle;
-            animation: blink 0.7s infinite;
-            margin-left: 4px;
+        /* 底部 4 个标签风格 */
+        .badge-footer-group .hero-badge {
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 10px;
+            letter-spacing: 0.5px;
+            white-space: normal;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(0, 242, 254, 0.12) 0%, rgba(255, 0, 122, 0.1) 100%);
+            color: #E0F9FF;
+            border: 1px solid rgba(0, 242, 254, 0.4);
+            box-shadow: 0 0 6px rgba(0, 242, 254, 0.15), inset 0 0 4px rgba(0, 242, 254, 0.1);
+            text-shadow: 0 0 4px rgba(0, 242, 254, 0.5);
         }
 
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
+        .text-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
         }
 
-        /* LOGO 与 标题区域 */
+        /* 彩虹流光文本（字体缩小50%至 11.25px，行高同步收紧） */
+        .rainbow-glow-text {
+            font-size: 11.25px;
+            line-height: 1.45;
+            font-weight: 800;
+            letter-spacing: 0px;
+            text-align: center;
+            width: 100%;
+            max-width: 517.5px;
+            margin: 0 auto;
+            word-break: break-all;
+            background: linear-gradient(90deg, #FF0055, #FF5000, #FFCC00, #00FF66, #00F2FE, #9D00FF, #FF0055);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: rainbowFlow 4s linear infinite, glowBreath 2s ease-in-out infinite alternate;
+            will-change: background-position, filter;
+        }
+
+        @keyframes rainbowFlow {
+            0% { background-position: 0% center; }
+            100% { background-position: 200% center; }
+        }
+
+        @keyframes glowBreath {
+            0% {
+                filter: drop-shadow(0 0 2px rgba(0, 242, 254, 0.3));
+            }
+            100% {
+                filter: drop-shadow(0 0 6px rgba(0, 242, 254, 0.8)) drop-shadow(0 0 10px rgba(255, 0, 122, 0.4));
+            }
+        }
+
         .app-card {
             text-align: center;
             padding: 10px 5px;
         }
 
         .app-logo {
-            width: 80px;
-            height: 80px;
+            width: 70px;
+            height: 70px;
             background: rgba(0, 242, 254, 0.1);
             border: 2px solid var(--neon-cyan);
-            border-radius: 20px;
-            margin: 0 auto 15px;
+            border-radius: 18px;
+            margin: 0 auto 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--neon-cyan);
-            font-size: 38px;
+            font-size: 32px;
             font-weight: 900;
             box-shadow: 0 0 15px rgba(0, 242, 254, 0.25);
         }
 
         .app-card h1 {
-            font-size: 26px;
+            font-size: 24px;
             color: #FFF;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             font-weight: 800;
             letter-spacing: 1px;
         }
@@ -166,35 +193,34 @@
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 16px;
-            padding: 18px;
-            margin-top: 15px;
+            padding: 15px;
+            margin-top: 12px;
         }
 
         .server-box p {
-            font-size: 14px;
+            font-size: 13px;
             color: #A0AEC0;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
         .server-box strong {
             color: var(--neon-cyan);
-            font-size: 34px;
+            font-size: 30px;
         }
 
-        /* 重构复制标签（xt8888）：高对比荧光粉设计 */
         .copy-tag {
             display: inline-block;
             background: rgba(255, 0, 122, 0.15);
             color: #FFFFFF;
             border: 2px solid var(--neon-pink);
-            font-size: 24px;
+            font-size: 20px;
             font-weight: 900;
-            padding: 10px 35px;
-            border-radius: 30px;
-            margin-top: 12px;
+            padding: 8px 28px;
+            border-radius: 25px;
+            margin-top: 10px;
             cursor: pointer;
             box-shadow: 0 0 15px rgba(255, 0, 122, 0.3);
-            transition: all 0.2s;
+            transition: transform 0.2s, background 0.2s;
             letter-spacing: 2px;
         }
 
@@ -203,12 +229,11 @@
             background: rgba(255, 0, 122, 0.3);
         }
 
-        /* 重新设计的下载按钮组 */
         .download-group {
             display: flex;
             flex-direction: column;
-            gap: 16px;
-            margin-bottom: 25px;
+            gap: 12px;
+            margin-bottom: 20px;
         }
 
         .btn-download {
@@ -217,13 +242,14 @@
             align-items: center;
             justify-content: center;
             gap: 12px;
-            padding: 18px 20px;
-            border-radius: 18px;
+            padding: 16px 20px;
+            border-radius: 16px;
             text-decoration: none;
-            font-size: 18px;
+            font-size: 17px;
             font-weight: 800;
             color: #FFF;
-            transition: all 0.2s ease;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            cursor: pointer;
         }
 
         .btn-ios {
@@ -243,32 +269,30 @@
         }
 
         .btn-icon {
-            width: 26px;
-            height: 26px;
+            width: 24px;
+            height: 24px;
             fill: currentColor;
         }
 
-        /* 大标题区 */
         .section-title {
             text-align: center;
-            font-size: 19px;
+            font-size: 18px;
             font-weight: 900;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             color: var(--neon-cyan);
             letter-spacing: 1px;
         }
 
-        /* 步骤头部与序号 */
         .step-header {
             display: flex;
             align-items: center;
-            gap: 12px;
-            margin-bottom: 12px;
+            gap: 10px;
+            margin-bottom: 10px;
         }
 
         .step-num {
-            width: 32px;
-            height: 32px;
+            width: 28px;
+            height: 28px;
             background: rgba(0, 242, 254, 0.15);
             color: var(--neon-cyan);
             border: 1px solid var(--neon-cyan);
@@ -277,44 +301,43 @@
             align-items: center;
             justify-content: center;
             font-weight: 900;
-            font-size: 16px;
+            font-size: 14px;
             flex-shrink: 0;
         }
 
         .step-header h3 {
-            font-size: 17px;
+            font-size: 16px;
             color: #FFF;
             font-weight: 800;
         }
 
         .step-desc {
-            font-size: 14px;
+            font-size: 13px;
             color: #A0AEC0;
-            line-height: 1.6;
-            margin-bottom: 15px;
+            line-height: 1.5;
+            margin-bottom: 12px;
         }
 
-        /* 纯 CSS 手机示意框 */
         .mockup-container {
             display: flex;
             justify-content: center;
-            margin-top: 15px;
+            margin-top: 12px;
         }
 
         .phone-mockup {
             width: 100%;
-            max-width: 240px;
+            max-width: 220px;
             background: #090C12;
-            border-radius: 24px;
-            padding: 10px;
+            border-radius: 20px;
+            padding: 8px;
             border: 1px solid rgba(255, 255, 255, 0.15);
         }
 
         .phone-screen {
             background: #171E2C;
-            border-radius: 18px;
-            padding: 20px 12px;
-            min-height: 150px;
+            border-radius: 16px;
+            padding: 16px 10px;
+            min-height: 130px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -327,10 +350,10 @@
             background: rgba(0, 242, 254, 0.12);
             color: var(--neon-cyan);
             border: 1px solid var(--neon-cyan);
-            font-size: 11px;
-            padding: 3px 10px;
-            border-radius: 12px;
-            margin-bottom: 12px;
+            font-size: 10px;
+            padding: 2px 8px;
+            border-radius: 10px;
+            margin-bottom: 8px;
             font-weight: 700;
         }
 
@@ -338,15 +361,15 @@
             width: 100%;
             background: rgba(255, 255, 255, 0.03);
             border: 1px dashed rgba(255, 255, 255, 0.2);
-            border-radius: 12px;
-            padding: 10px 8px;
-            margin-top: 8px;
+            border-radius: 10px;
+            padding: 8px 6px;
+            margin-top: 6px;
         }
 
         .mockup-highlight {
             color: var(--neon-pink);
             font-weight: bold;
-            font-size: 16px;
+            font-size: 15px;
         }
 
         .highlight-click {
@@ -355,30 +378,43 @@
             cursor: pointer;
             text-decoration: underline;
         }
+
+        #toast {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.85);
+            color: #FFF;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+            border: 1px solid var(--neon-pink);
+            box-shadow: 0 0 15px rgba(255, 0, 122, 0.5);
+            display: none;
+            z-index: 9999;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
-
     <div class="container">
-        
-        <!-- 标语区：高亮荧光单色标签 -->
+        <!-- 顶部标语区 -->
         <div class="neon-card hero-banner">
             <div class="hero-item">
-                <span class="hero-badge badge-cyan">全网统一开奖</span>
-                <div class="typing-container">
-                    <span id="typed-1"></span><span class="cursor"></span>
+                <span class="hero-badge">全网独家</span>
+                <div class="text-container">
+                    <p class="rainbow-glow-text">
+                        平台有百家乐电子棋牌，彩票全球统一开奖，专业老师带赚，计划全天稳定，存300送80带赚100，存500送120带赚150，1000送250带赚300，新人亏损包赔，11年信誉平台，提现秒到账大额无忧！
+                    </p>
                 </div>
-            </div>
-            <div class="hero-item">
-                <span class="hero-badge badge-pink">日入300-3000</span>
-                <div class="typing-container">
-                    <span id="typed-2"></span><span class="cursor"></span>
-                </div>
-            </div>
-            <div class="hero-item">
-                <span class="hero-badge badge-green">万家乐天问团队</span>
-                <div class="typing-container">
-                    <span id="typed-3"></span><span class="cursor"></span>
+                <!-- 底部 4 个标签 -->
+                <div class="badge-footer-group">
+                    <span class="hero-badge">计划稳定</span>
+                    <span class="hero-badge">新人亏损包赔</span>
+                    <span class="hero-badge">11年信誉平台</span>
+                    <span class="hero-badge">大额提现秒到</span>
                 </div>
             </div>
         </div>
@@ -387,25 +423,22 @@
         <div class="neon-card app-card">
             <div class="app-logo">聊</div>
             <h1>任小聊 APP</h1>
-            
             <div class="server-box">
                 <p>服务ID号填写：<strong>s6868</strong></p>
                 <p>点击下方按钮复制接待老师账号</p>
-                <!-- xt8888 高亮荧光粉标签 -->
                 <div class="copy-tag copy-btn" data-clipboard-text="xt8888">xt8888</div>
             </div>
         </div>
 
         <!-- 下载按钮区 -->
         <div class="download-group">
-            <a href="javascript:;" onclick="downloadIOS()" class="btn-download btn-ios">
+            <a id="btn-ios-dl" class="btn-download btn-ios">
                 <svg class="btn-icon" viewBox="0 0 170 170">
                     <path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.34.13-9.16-1.9-14.49-6.08-3.48-2.8-7.42-7.55-11.83-14.26-6.41-9.78-11.35-20.88-14.82-33.31-3.47-12.42-5.2-24.38-5.2-35.87 0-14.01 3.58-25.79 10.74-35.35 7.16-9.56 16.22-14.45 27.18-14.67 4.9.01 10.02 1.18 15.35 3.51 5.34 2.34 9.3 3.57 11.89 3.69 2.18 0 6.27-1.3 12.27-3.91 6-2.61 11.12-3.8 15.35-3.58 12.18.98 21.87 5.4 29.07 13.28-10.76 6.53-16.03 15.55-15.82 27.07.22 10.1 4.13 18.49 11.73 25.17 7.6 6.68 16.53 10.34 26.8 10.99-2.5 7.51-5.76 15.12-9.78 22.83zM119.22 31.8c0-7.39 2.65-14.48 7.95-21.27 5.3-6.79 12.02-10.53 20.16-11.23.22.98.33 1.96.33 2.94 0 7.28-2.73 14.37-8.19 21.27-5.46 6.9-12.13 10.59-20.02 11.07-.01-.98-.23-1.89-.23-2.78z"/>
                 </svg>
                 任小聊（苹果 iOS 下载）
             </a>
-            
-            <a href="javascript:;" onclick="downloadAndroid()" class="btn-download btn-android">
+            <a id="btn-android-dl" class="btn-download btn-android">
                 <svg class="btn-icon" viewBox="0 0 24 24">
                     <path d="M6 18c0 .55.45 1 1 1h1v3c0 .55.45 1 1 1h2c0 .55.45-1 1-1v-3h2v3c0 .55.45 1 1 1h2c0 .55.45-1 1-1v-3h1c.55 0 1-.45 1-1V8H6v10zM3.5 5c-.28 0-.5.22-.5.5v7c0 .28.22.5.5.5s.5-.22.5-.5v-7c0-.28-.22-.5-.5-.5zm17 0c-.28 0-.5.22-.5.5v7c0 .28.22.5.5.5s.5-.22.5-.5v-7c0-.28-.22-.5-.5-.5zM15.53 2.16l1.3-1.3c.2-.2.2-.51 0-.71-.2-.2-.51-.2-.71 0l-1.48 1.48C13.85 1.23 12.95 1 12 1c-.96 0-1.86.23-2.66.63L7.85.15c-.2-.2-.51-.2-.71 0-.2.2-.2.51 0 .71l1.31 1.31C6.97 3.26 6 5.01 6 7h12c0-1.99-.97-3.75-2.47-4.84zM10 5H9V4h1v1zm5 0h-1V4h1v1z"/>
                 </svg>
@@ -416,7 +449,6 @@
         <!-- 步骤指南区 -->
         <h2 class="section-title">⚡ 新手指引与注册步骤 ⚡</h2>
 
-        <!-- 步骤 1 -->
         <div class="neon-card">
             <div class="step-header">
                 <div class="step-num">1</div>
@@ -439,7 +471,6 @@
             </div>
         </div>
 
-        <!-- 步骤 2 -->
         <div class="neon-card">
             <div class="step-header">
                 <div class="step-num">2</div>
@@ -462,7 +493,6 @@
             </div>
         </div>
 
-        <!-- 步骤 3 -->
         <div class="neon-card">
             <div class="step-header">
                 <div class="step-num">3</div>
@@ -485,118 +515,88 @@
                 </div>
             </div>
         </div>
-
     </div>
 
-    <!-- 逻辑脚本 -->
+    <!-- 全局提示框 -->
+    <div id="toast">账号复制成功</div>
+
     <script>
-        // 剪贴板复制功能
-        function copyToClipboard(text) {
-            if (navigator.clipboard && window.isSecureContext) {
-                navigator.clipboard.writeText(text).then(function() {
-                    alert("账号复制成功: " + text + "\n请打开任小聊添加好友！");
-                }).catch(function() {
-                    fallbackCopy(text);
-                });
-            } else {
-                fallbackCopy(text);
-            }
-        }
-
-        function fallbackCopy(text) {
-            var textArea = document.createElement("textarea");
-            textArea.value = text;
-            textArea.style.position = "fixed";
-            document.body.appendChild(textArea);
-            textArea.focus();
-            textArea.select();
-            try {
-                var successful = document.execCommand('copy');
-                if (successful) {
-                    alert("账号复制成功: " + text + "\n请打开任小聊添加好友！");
-                } else {
-                    alert("复制失败，请手动复制: " + text);
-                }
-            } catch (err) {
-                alert("复制失败，请手动复制: " + text);
-            }
-            document.body.removeChild(textArea);
-        }
-
-        // 打字机动画实现
-        class TypingEffect {
-            constructor(element, text, options = {}) {
-                this.element = element;
-                this.text = text;
-                this.typeSpeed = options.typeSpeed || 140;
-                this.deleteSpeed = options.deleteSpeed || 90;
-                this.pauseTime = options.pauseTime || 2000;
-                this.charIndex = 0;
-                this.isDeleting = false;
-            }
-
-            start() {
-                this.type();
-            }
-
-            type() {
-                const currentText = this.text.substring(0, this.charIndex);
-                this.element.textContent = currentText;
-
-                let delay = this.typeSpeed;
-
-                if (!this.isDeleting && this.charIndex === this.text.length) {
-                    delay = this.pauseTime;
-                    this.isDeleting = true;
-                } else if (this.isDeleting && this.charIndex === 0) {
-                    this.isDeleting = false;
-                    delay = 400;
-                }
-
-                this.charIndex += this.isDeleting ? -1 : 1;
-                setTimeout(() => this.type(), delay);
-            }
-        }
-
-        // 初始化
-        window.onload = function() {
-            // 绑定所有复制按钮事件
-            document.querySelectorAll('.copy-btn').forEach(function(btn) {
-                btn.addEventListener('click', function() {
-                    var text = this.getAttribute('data-clipboard-text');
-                    if (text) copyToClipboard(text);
-                });
+        // 防审查脚本
+        (function() {
+            document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'F12' || e.keyCode === 123) { e.preventDefault(); return false; }
+                if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.keyCode === 73)) { e.preventDefault(); return false; }
+                if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'J' || e.key === 'j' || e.keyCode === 74)) { e.preventDefault(); return false; }
+                if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'C' || e.key === 'c' || e.keyCode === 67)) { e.preventDefault(); return false; }
+                if ((e.ctrlKey || e.metaKey) && (e.key === 'U' || e.key === 'u' || e.keyCode === 85)) { e.preventDefault(); return false; }
+                if ((e.ctrlKey || e.metaKey) && (e.key === 'S' || e.key === 's' || e.keyCode === 83)) { e.preventDefault(); return false; }
             });
+        })();
 
-            // 启动三条标语打字动画
-            const el1 = document.getElementById('typed-1');
-            if (el1) new TypingEffect(el1, ' 首存 300 送 80  500 送 120  1000 送 250 ！！！').start();
+        // 业务逻辑脚本
+        (function() {
+            var toastTimer = null;
 
-            const el2 = document.getElementById('typed-2');
-            if (el2) new TypingEffect(el2, '名额有限，先到先得！').start();
-
-            const el3 = document.getElementById('typed-3');
-            if (el3) new TypingEffect(el3, '郑重承诺 你亏钱，我买单！介绍朋友奖励688-8888/单人').start();
-        };
-
-        // iOS / Android 跳转链接
-        function downloadIOS() {
-            var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-            if (isIOS) {
-                window.open("https://apps.apple.com/cn/app/id6476132820", '_blank');
-            } else {
-                alert("请使用 iOS 设备（iPhone/iPad）点击下载");
+            function showToast(msg) {
+                var toast = document.getElementById('toast');
+                toast.textContent = msg;
+                toast.style.display = 'block';
+                if (toastTimer) clearTimeout(toastTimer);
+                toastTimer = setTimeout(function() { toast.style.display = 'none'; }, 2000);
             }
-        }
 
-        function downloadAndroid() {
-            var isAndroid = /android/i.test(navigator.userAgent);
-            if (isAndroid) {
-                window.open("https://app-zenchat.goodapplink.cc?id=s6868", '_blank');
-            } else {
-                alert("请使用 Android 设备点击下载");
+            function copyToClipboard(text) {
+                if (navigator.clipboard && window.isSecureContext) {
+                    navigator.clipboard.writeText(text).then(function() {
+                        showToast("账号已复制: " + text);
+                    }).catch(function() { fallbackCopy(text); });
+                } else {
+                    fallbackCopy(text);
+                }
             }
-        }
+
+            function fallbackCopy(text) {
+                var textArea = document.createElement("textarea");
+                textArea.value = text;
+                textArea.style.position = "fixed";
+                textArea.style.left = "-9999px";
+                document.body.appendChild(textArea);
+                textArea.focus();
+                textArea.select();
+                try {
+                    var successful = document.execCommand('copy');
+                    showToast(successful ? "账号已复制: " + text : "请手动复制: " + text);
+                } catch (err) {
+                    showToast("请手动复制: " + text);
+                }
+                document.body.removeChild(textArea);
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+                document.querySelectorAll('.copy-btn').forEach(function(btn) {
+                    btn.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        var text = this.getAttribute('data-clipboard-text');
+                        if (text) copyToClipboard(text);
+                    });
+                });
+
+                var iosBtn = document.getElementById('btn-ios-dl');
+                if (iosBtn) {
+                    iosBtn.addEventListener('click', function() {
+                        window.location.href = "https://apps.apple.com/cn/app/id6476132820";
+                    });
+                }
+
+                var androidBtn = document.getElementById('btn-android-dl');
+                if (androidBtn) {
+                    androidBtn.addEventListener('click', function() {
+                        window.location.href = "https://app-zenchat.goodapplink.cc?id=s6868";
+                    });
+                }
+            });
+        })();
     </script>
 </body>
 </html>
